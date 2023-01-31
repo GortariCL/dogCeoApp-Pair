@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675193553888" clover="3.2.0">
-  <project timestamp="1675193553888" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1675196566570" clover="3.2.0">
+  <project timestamp="1675196566570" name="All files">
+    <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0" elements="10" coveredelements="1" complexity="0" loc="8" ncloc="8" packages="1" files="1" classes="1"/>
+    <file name="Card.jsx" path="C:\Users\ferna\OneDrive\Desktop\MOBDEV\DogCeoApp-Pair\dogCeoApp-Pair\src\components\Card\Card.jsx">
+      <metrics statements="8" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+    </file>
   </project>
 </coverage>
