@@ -1,6 +1,6 @@
-import { findByText, getByText, render } from "@testing-library/react";
+import { getByText, render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Card } from "../Card/Card";
+import { BreedList } from "./BreedList";
 
 const data = [
   {
@@ -15,26 +15,6 @@ const data = [
   },
 ];
 
-const BreedList = ({ data }) => {
-  return (
-    <>
-      {data &&
-        data.breed &&
-        data.src &&
-        data.alt &&
-        data.map((element, index) => {
-          return (
-            <Card
-              key={index}
-              breed={element.breed}
-              src={element.src}
-              alt={element.alt}
-            />
-          );
-        })}
-    </>
-  );
-};
 describe("Breed suite test", () => {
   it("Should render", () => {
     render(<BreedList />);
@@ -56,17 +36,6 @@ describe("Breed suite test", () => {
   });
 
   it("New Breed Renders", () => {
-    const breeds = ["Breed 1", "Breed 2"];
-    const src = [
-      "https://images.dog.ceo/breeds/affenpinscher/n02110627_10047.jpg",
-      "https://images.dog.ceo/breeds/affenpinscher/n02110627_10048.jpg",
-    ];
-    const alt = ["Breed 1", "Breed 2"];
-    const data = {
-      breeds,
-      src,
-      alt,
-    };
     //Arrange
     const { container } = render(<BreedList data={data} />);
     const expectTitle1 = "Breed 1";
@@ -74,29 +43,16 @@ describe("Breed suite test", () => {
     const expectSrc1 =
       "https://images.dog.ceo/breeds/affenpinscher/n02110627_10047.jpg";
     const expectSrc2 =
-      "https://images.dog.ceo/breeds/affenpinscher/n02110627_10048.jpg";
+      "https://images.dog.ceo/breeds/affenpinscher/n02110627_10047.jpg";
     const expectAlt1 = "Breed 1";
-    const expectAlt2 = "Breed 1";
-    //Act
+    const expectAlt2 = "Breed 2";
+
+    //Act And Assert
     expect(getByText(container, expectTitle1)).toBeTruthy();
     expect(getByText(container, expectTitle2)).toBeTruthy();
-    expect(getByText(container, expectSrc1)).toBeTruthy();
-    expect(getByText(container, expectSrc2)).toBeTruthy();
+    expect(expectSrc1).toEqual(data[0].src);
+    expect(expectSrc2).toEqual(data[1].src);
     expect(getByText(container, expectAlt1)).toBeTruthy();
     expect(getByText(container, expectAlt2)).toBeTruthy();
   });
-
-  // it("New ", () => {
-  //   const breeds = ["Breed 1", "Breed 2"];
-  //   const data = {
-  //     breeds,
-  //   };
-  //   //Arrange
-  //   const { container } = render(<BreedList data={data} />);
-  //   const expectTitle1 = "Breed 1";
-  //   const expectTitle2 = "Breed 2";
-  //   //Act
-  //   expect(getByText(container, expectTitle1)).toBeTruthy();
-  //   expect(getByText(container, expectTitle2)).toBeTruthy();
-  // });
 });
