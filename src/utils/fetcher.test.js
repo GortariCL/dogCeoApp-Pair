@@ -29,7 +29,7 @@ describe("fetcher test suit", () => {
   it("Error test 500", () => {
     // Arrange && Act
     global.fetch = () =>
-      Promise.resolve({
+      Promise.reject({
         status: 500,
         json: () => Promise.resolve(),
       });
@@ -43,7 +43,7 @@ describe("fetcher test suit", () => {
   it("Error test 400", () => {
     // Arrange && Act
     global.fetch = () =>
-      Promise.resolve({
+      Promise.reject({
         status: 400,
         json: () => Promise.resolve(),
       });
