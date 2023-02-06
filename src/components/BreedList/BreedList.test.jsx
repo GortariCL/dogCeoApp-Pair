@@ -21,12 +21,12 @@ describe("Breed suite test", () => {
   });
 
   it("Should be render ... ", () => {
-    // Act
+    // Arrange && Act
     const titleArr = data.map((title) => title.title);
     const srcArr = data.map((src) => src.src);
     const altArr = data.map((alt) => alt.alt);
 
-    // Expect
+    // Assert
     expect(titleArr).toEqual(["Breed 1", "Breed 2"]);
     expect(srcArr).toEqual([
       "https://images.dog.ceo/breeds/affenpinscher/n02110627_10047.jpg",
