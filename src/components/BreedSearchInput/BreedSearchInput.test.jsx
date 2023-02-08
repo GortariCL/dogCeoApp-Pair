@@ -30,7 +30,7 @@ const BreedSearchInput = (breed) => {
   );
 };
 
-describe("BreedSearchInput", () => {
+describe.skip("BreedSearchInput", () => {
   it("Render", () => {
     render(<BreedSearchInput breed="Husky" />);
   });

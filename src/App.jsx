@@ -1,4 +1,5 @@
 import { BreedList } from "./components/BreedList/BreedList";
+import { Form } from "./components/Form/Form";
 
 function App() {
   const data = [
@@ -19,9 +20,15 @@ function App() {
     },
   ];
 
+  const mockOptions = [
+    { value: "1", label: "1" },
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+  ];
+
   return (
-    <div>
-      <BreedList data={data} />
+    <div className="app">
+      <Form options={mockOptions} />
     </div>
   );
 }
